@@ -38,12 +38,12 @@
   <style data-emotion="css" data-s=""></style></head>
 
   <body class="text-center">
-    <form class="form-signin" action="{% url 'accounts:accounts_login' %}" method="post">
+    <form class="form-signin" action="{% url 'account_login' %}" method="post">
       {% csrf_token %}
       <img class="mb-4" src="{% static 'pasamo-logo.png' %}" alt="" width="72" height="72">
       <h1 class="h4 mb-3 font-weight-normal">환영합니다.</h1>
-      <h1 class="h3 mb-3 font-weight-normal">파이콘 한국</h1>
-      <h1 class="h3 mb-3 font-weight-normal">업무지원 시스템입니다.</h1>
+      <h1 class="h3 mb-3 font-weight-normal">파이콘 한국 2023</h1>
+      <h1 class="h3 mb-3 font-weight-normal">후원사 로그인입니다.</h1>
       <label for="inputEmail" class="sr-only">ID</label>
       <input type="text" id="username" name="username" class="form-control" placeholder="ID" required="" autofocus="">
       <label for="inputPassword" class="sr-only">Password</label>

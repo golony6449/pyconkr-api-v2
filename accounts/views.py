@@ -21,12 +21,12 @@ from allauth.account.views import LoginView, LogoutView
 
 
 class IdLogin(LoginView):
-    template_name = "accounts/login.html"
-    success_url = "/"
+    template_name = "login.html"
+    success_url = "/sponsors/edit/"
 
 
 class Logout(LogoutView):
-    template_name = "accounts/logout.html"
+    template_name = "logout.html"
 
 
 class GitHubLogin(SocialLoginView):

@@ -1,0 +1,119 @@
+{% load static %}
+
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://getbootstrap.com/docs/4.0/examples/checkout/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://getbootstrap.com/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>후원사 소개글 수정</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/checkout/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'reservation_form_files/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'reservation_form_files/form-validation.css' %}" rel="stylesheet">
+  <style data-emotion="css" data-s=""></style></head>
+
+<!-- include summernote css/js -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+  <body class="bg-light">
+
+    <div class="container">
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="{% static 'pasamo-logo.png' %}" alt="" width="72" height="72">
+        <h2>후원사 소개글 수정</h2>
+        <p class="lead">안녕하세요. {{ username }}님, 파이콘 한국에 기여해주셔서 감사드립니다.</p>
+        <p class="lead">문의사항은 <a href="mailto://sponsor@pycon.kr">파이콘 한국 후원사 메일</a>로 주시면 회신 드리겠습니다.</p>
+      </div>
+
+      <div class="row">
+        <div class="col-md order-md-1">
+          <h4 class="mb-3">후원사 정보 수정</h4>
+          <form class="needs-validation" novalidate="" action="{% url "edit_sponsor_info" %}" method=post enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="sponsor_name">후원사 이름</label>
+                <input type="email" class="form-control" id="sponsor_name" aria-describedby="sponsor_name" readonly>
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                  <label for="summernote">소개글</label>
+                <textarea id="summernote" name="editordata"></textarea>
+              </div>
+            </div>
+
+          {% if messages %}
+              <div class="mb-3">
+              {% for message in messages %}
+                  {{ message }}
+              {% endfor %}
+              </div>
+          {% endif %}
+
+            <hr class="mb-4">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">수정</button>
+          </form>
+        </div>
+      </div>
+
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">파이콘 한국 준비위원회</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="mailto://sponsor@pycon.kr">문의하기</a></li>
+        </ul>
+      </footer>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{% static 'reservation_form_files/jquery-3.2.1.slim.min.js' %}" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+{#    <script>window.jQuery || document.write('<script src="{% static 'reservation_form_files/jquery-slim.min.js' %}"><\/script>')</script>#}
+    <script src="{% static 'reservation_form_files/popper.min.js' %}"></script>
+    <script src="{% static 'reservation_form_files/bootstrap.min.js' %}"></script>
+    <script src="{% static 'reservation_form_files/holder.min.js' %}"></script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $('#summernote').summernote();
+        });
+    </script>
+  
+
+<div id="__endic_crx__"><div class="css-diqpy0"></div></div></body></html>
