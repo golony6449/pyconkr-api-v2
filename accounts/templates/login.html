@@ -1,0 +1,61 @@
+{% load i18n %}
+
+{#{% block content %}#}
+{##}
+{#<h1>{% trans "Sign In" %}</h1>#}
+{##}
+{#<form class="login" method="POST" action="{% url 'account_login' %}">#}
+{#  {% csrf_token %}#}
+{#  {{ form.as_p }}#}
+{#  {% if redirect_field_value %}#}
+{#  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />#}
+{#  {% endif %}#}
+{#  <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>#}
+{#</form>#}
+{##}
+{#{% endblock %}#}
+
+{% load static %}
+
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://getbootstrap.com/docs/4.0/examples/sign-in/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://getbootstrap.com/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>로그인</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'login_files/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'login_files/signin.css' %}" rel="stylesheet">
+  <style data-emotion="css" data-s=""></style></head>
+
+  <body class="text-center">
+    <form class="form-signin" action="{% url 'accounts:accounts_login' %}" method="post">
+      {% csrf_token %}
+      <img class="mb-4" src="{% static 'pasamo-logo.png' %}" alt="" width="72" height="72">
+      <h1 class="h4 mb-3 font-weight-normal">환영합니다.</h1>
+      <h1 class="h3 mb-3 font-weight-normal">파이콘 한국</h1>
+      <h1 class="h3 mb-3 font-weight-normal">업무지원 시스템입니다.</h1>
+      <label for="inputEmail" class="sr-only">ID</label>
+      <input type="text" id="username" name="username" class="form-control" placeholder="ID" required="" autofocus="">
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required="">
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">로그인</button>
+      <p class="mt-5 mb-3 text-muted">© 2023-pyconkr</p>
+    </form>
+
+
+<div id="__endic_crx__"><div class="css-diqpy0"></div></div></body></html>
